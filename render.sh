@@ -1,12 +1,12 @@
 echo "Usage: sh render.sh [publish]"
 GUIDES=neo4j-guides
-# git clone http://github.com/jexp/neo4j-guides $GUIDES
+
 
 function render {
   $GUIDES/run.sh index.adoc index.html +1 "$@"
 }
 
-# -a env-training is a flag to enable full content, if you comment it out, the guides are rendered minimally e.g. for a presentation
+
 if [ "$1" == "publish" ]; then
   URL=guides.neo4j.com/nlp_knowledge_graphs
   render http://$URL -a env-training -a img=https://$URL/images
